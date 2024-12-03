@@ -1,2 +1,2 @@
 # International Trade Analysis
-![ERD](.\International_Trade.png)
+![ERD](International_Trade.png)
