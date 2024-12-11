@@ -3,44 +3,63 @@ The project used the drawio software to establish the relationship between the t
 Below is the ERD for ImportExportTransactions database for the project.
 
 ![ERD](Relationship_diagram.drawio.png)
+
 International Trade Analysis 💰📊
-Below is a project that analyzes international trade in various countries around the globe. The data for the analysis was obtained from  kaggle.com. The analysis's results are crucial for economic plans, business choices, and policy measures within the international market. It offers a data-based framework for comprehending the flow of goods, services, and capital across international boundaries and their effects on national and global economies.
+
+Below is a project that analyzes international trade in various countries around the globe. 
+The data for the analysis was obtained from  kaggle.com. 
+The analysis's results are crucial for economic plans, business choices, and policy measures within the international market. 
+It offers a data-based framework for comprehending the flow of goods, services, and capital across international boundaries and their effects on national and global economies.
 
 Using SQL Server Management Studio to Create Database 🗄️🗄️
-The steps in creating the database and its associated schemas for the project were guided by the techniques outlined in the W3Schools. The W3School tutorial was used to identify all constraints in the database used for the project.
+
+The steps in creating the database and its associated schemas for the project were guided by the techniques outlined in the W3Schools. 
+The W3School tutorial was used to identify all constraints in the database used for the project.
 
 Database Creation 🗄️
+
 CREATE DATABASE ImportExportTransactions
+
 Creating Schemas for ImportExportTransactions Database
 The following schemas were created for the database to function:
 
-dim
-fact
-stag
-/*********************************************************/
-/******************    Schema DDL       ******************/
-/*********************************************************/
+i. dim
+ii. fact
+iii. stag
+
+Creating the above Schemas DDL  
 
 IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'dim' ) 
+
 BEGIN
+    
     EXEC sp_executesql N'CREATE SCHEMA dim AUTHORIZATION dbo;'
+
 END
 ;
 
 GO
 
 IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'stg' ) 
+
 BEGIN
+    
     EXEC sp_executesql N'CREATE SCHEMA stg AUTHORIZATION dbo;'
+
 END
 ;
 
 GO
 
 IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'fact' ) 
+
 BEGIN
+    
     EXEC sp_executesql N'CREATE SCHEMA f AUTHORIZATION dbo;'
+
 END
+;
+
 Dimensions Creation 🗄️
 The project employed the Ralph Kimball principles to create the following dimensions and facts for the project:
 
